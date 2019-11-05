@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 960px;
+}
+
+html{
+  font-size: 100%;
+}
+
+body{
+  font-family: 'Poppins', sans-serif;
+}
+
+.heading{
+  color: #fff;
+  font-size: 3rem;
+}
+
+.background-text{
+  font-size: 200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgba(228, 244, 247, 0.8);
+  font-weight: 500;
+}
+
+#goToBeers{
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+}
+
+#filter-menu, #reset-filters{
+  cursor: pointer;
+}
+
+.display-on-desk{
+  display: none;
+}
+
+.list{
+  display: flex;
+  justify-content: space-around;
+  margin: 0;
+}
+
+.list-item{
+  cursor: pointer;
+  list-style: none;
+}
+
+
+#printOutput{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-gap: 1rem;
+}
+
+.card-head{
+  width: 80%;
+  margin: auto;
+}
+
+.myBg{
+  background: #dadada;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ * Custom translucent site header
+ */
+
+ .site-header {
+  background-color: rgba(0, 0, 0, .85);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+}
+.site-header a {
+  color: #999;
+  transition: ease-in-out color .15s;
+}
+.site-header a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+/*
+ * Dummy devices (replace them with your own or something else entirely!)
+ */
+
+ .product-device {
+  position: absolute;
+  right: 10%;
+  bottom: -30%;
+  width: 300px;
+  height: 540px;
+  background-color: #333;
+  border-radius: 21px;
+  -webkit-transform: rotate(30deg);
+  transform: rotate(30deg);
+}
+
+.product-device::before {
+  position: absolute;
+  top: 10%;
+  right: 10px;
+  bottom: 10%;
+  left: 10px;
+  content: "";
+  background-color: rgba(255, 255, 255, .1);
+  border-radius: 5px;
+}
+
+.product-device-2 {
+  top: -25%;
+  right: auto;
+  bottom: 0;
+  left: 5%;
+  background-color: #e5e5e5;
+}
+
+
+/*
+ * Extra utilities
+ */
+
+ .flex-equal > * {
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.overflow-hidden { overflow: hidden; }
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+/*merdia queries*/
+@media (min-width: 768px) {
+  .flex-md-equal > * {
+    -ms-flex: 1;
+    flex: 1;
+  }
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .background-text {
+    font-size: 250px;
+    font-weight: 600;
+  }
+  #goToBeers{
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  html{
+    font-size: 120%;
+  }
+  .display-on-desk{
+    display: block;
+  }
+  .background-text {
+    font-size: 300px;
+    font-weight: 600;
+  }
+  #goToBeers{
+    bottom: 20%;
+  }
+  #filter-menu{
+  display: none;
+}
+}
