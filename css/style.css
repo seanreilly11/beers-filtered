@@ -23,6 +23,10 @@ body{
   font-size: 3rem;
 }
 
+.myBg{
+  background: #dadada;
+}
+
 .background-text{
   font-size: 200px;
   position: absolute;
@@ -65,6 +69,7 @@ body{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   grid-gap: 1rem;
+  padding: 0 5%;
 }
 
 .card-head{
@@ -72,10 +77,35 @@ body{
   margin: auto;
 }
 
-.myBg{
-  background: #dadada;
+.beer-heading{
+  font-size: 1.8rem;
+  font-weight: 600;
 }
 
+.beer-price{
+ font-weight: 600;
+}
+
+.beer-image{
+  width: 100%;
+}
+
+.img-container{
+  height: 400px;
+  overflow-y: hidden;
+}
+
+.view-more{
+  text-align: center;
+  text-decoration: underline;
+  padding: 0;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.view-more:active{
+  transform: scale(.9);
+}
 
 
 
@@ -169,7 +199,7 @@ body{
 }
 
 
-/*merdia queries*/
+/*media queries*/
 @media (min-width: 768px) {
   .flex-md-equal > * {
     -ms-flex: 1;
@@ -209,5 +239,9 @@ body{
   }
   #filter-menu{
   display: none;
+}
+#printOutput{
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-gap: 1.5rem;
 }
 }
