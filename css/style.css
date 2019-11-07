@@ -108,7 +108,57 @@ body{
 }
 
 
+/*full screen filter menu*/
+.filter-menu-container{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ccc;
+  padding: 2rem;
+}
 
+.filter-menu-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filter-menu-body .form-group .form-check-input{
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.filter-menu-body .form-group .form-check-label{
+  font-size: 1.2rem;
+  margin-left: .4rem;
+}
+
+.filter-menu-filter{
+  font-size: 1.6rem;
+}
+
+
+
+.filter-menu-heading{
+  position: relative;
+  font-size: 2.2rem;
+}
+
+.filter-menu-heading::after{
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #000;
+}
+
+.close-menu{
+  font-size: 3rem;
+}
 
 
 
