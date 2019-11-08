@@ -191,7 +191,11 @@ function printItems(array){
 		output.innerHTML += card;      
 	}
 }
-
+var scount = 0;
+var sfilterName = "style";
+var fcount = 0;
+var ffilterName = "volume";
+var filtered = [];
 $(".form-group").click(function(e){
 	var id = e.target.id;
 	var checked = $('input[name=styles]:checked');
@@ -200,31 +204,76 @@ $(".form-group").click(function(e){
 	});
 	if(id.includes("style")){
 		var style = id.substr(0, id.indexOf('-'));
-		if(style === "all"){
-			printItems(beersArray);
+		// if(style === "all"){
+		// 	printItems(beersArray);
+		// }
+		// else{
+		// 	for(var i = 0; i < beersArray.length; i++){
+		// 		var filtered =  beersArray.filter(function(beer) {
+		// 			return beer.style.toUpperCase().includes(style.toUpperCase())
+		// 		});
+		// 	}
+		// 	printItems(filtered);
+		// } 
+		
+		//https://stackoverflow.com/questions/684672/how-do-i-loop-through-or-enumerate-a-javascript-object
+		//https://stackoverflow.com/questions/11508463/javascript-set-object-key-by-variable
+		//
+
+		if(sfilterName in filter){
+			scount++;
+			sfilterName = "style";
+			sfilterName += scount.toString();
+			filter[sfilterName] = style;
 		}
 		else{
-			for(var i = 0; i < beersArray.length; i++){
-				var filtered =  beersArray.filter(function(beer) {
-					return beer.style.toUpperCase().includes(style.toUpperCase())
-				});
-			}
-			printItems(filtered);
+			filter[sfilterName] = style;
 		}
+		Object.keys(filter).forEach(function(key, index){
+			var trueKey = "style";
+			for(var i = 0; i<beersArray.length; i++){
+				if(style === "all"){
+					printItems(beersArray);
+				}
+				else{
+					for(var i = 0; i < beersArray.length; i++){
+						filtered =  beersArray.filter(function(beer) {
+							return beer.style.toUpperCase().includes(filter[key].toUpperCase())
+						});
+					}
+					printItems(filtered);
+				}
+				//console.log(trueKey, filter[key])
+			}
+		})
 	}
 	else if(id.includes("volume")){
 		var size = id.substr(0, id.indexOf('-'));
-		if(size === "all"){
-			printItems(beersArray);
+		// if(size === "all"){
+		// 	printItems(beersArray);
+		// }
+		// else{
+		// 	for(var i = 0; i < beersArray.length; i++){
+		// 		var filtered =  beersArray.filter(function(beer) {
+		// 			return beer.volume.includes(size) || beer.volume === size;
+		// 		});
+		// 	}
+		// 	printItems(filtered);
+		// }
+		
+		
+		if(ffilterName in filter){
+			fcount++;
+			ffilterName = "volume";
+			ffilterName += fcount.toString();
+			filter[ffilterName] = size;
 		}
 		else{
-			for(var i = 0; i < beersArray.length; i++){
-				var filtered =  beersArray.filter(function(beer) {
-					return beer.volume.includes(size)
-				});
-			}
-			printItems(filtered);
+			filter[ffilterName] = size;
 		}
+		Object.keys(filter).forEach(function(key, index){
+			console.log(key);
+		})
 	}
 });
 
