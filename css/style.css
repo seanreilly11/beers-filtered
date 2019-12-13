@@ -37,6 +37,16 @@ body{
   font-weight: 500;
 }
 
+.fa-shopping-cart{
+  color: white;
+  font-size: 1.5rem;
+  position: absolute;
+  top: 50%;
+  left: 90%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
 #goToBeers{
   position: absolute;
   bottom: 15%;
@@ -67,7 +77,7 @@ body{
 
 #printOutput{
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: 350px;
   grid-gap: 1rem;
   padding: 0 5%;
 }
@@ -140,8 +150,6 @@ body{
   font-size: 1.6rem;
 }
 
-
-
 .filter-menu-heading{
   position: relative;
   font-size: 2.2rem;
@@ -162,17 +170,71 @@ body{
 }
 
 
+/*modal pop up*/
+.myModal-outer{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(204, 204, 204, 0.7);
+  display: none;
+}
 
+.myModal-inner{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  background: #fff;
+  padding: 4rem;
+  overflow: hidden;
+}
 
+.myModal-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
+.myModal-heading{
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin: 0;
+}
 
+.myModal-subheading{
+  font-size: 1.8rem;
+}
 
+.myModal-subsubheading{
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+}
 
+.close{
+  font-size: 4rem;
+  cursor: pointer;
+}
 
+.myModal-body{
+  display: flex;
+  width: 100%;
+}
 
+.myModal-body-left{
+  flex-basis: 60%;
+  padding-right: 1rem;
+}
+.myModal-body-right{
+  flex-basis: 40%;
+}
 
-
-
+.myModal-body-right img{
+  width: 100%;
+}
 
 
 /*
